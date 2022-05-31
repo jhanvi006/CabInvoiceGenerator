@@ -1,7 +1,5 @@
 package com.bridgelabz;
 
-import java.util.Objects;
-
 public class InvoiceSummary {
     private int noOfRides;
     private double totalFare;

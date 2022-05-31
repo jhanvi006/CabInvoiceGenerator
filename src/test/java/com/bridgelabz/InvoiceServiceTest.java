@@ -39,4 +39,13 @@ public class InvoiceServiceTest {
         InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 40.0);
         Assertions.assertEquals(expectedInvoiceSummary, summary);
     }
+    @Test
+    public void givenUserId_ShouldReturnInvoiceSummary(){
+        int userId = 1;
+        Ride[] rides = { new Ride(3.0, 5),
+                new Ride(0.1, 1) };
+        InvoiceSummary summary = UserRideRepository.AddRide(userId, rides);
+        InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 40.0);
+        Assertions.assertEquals(expectedInvoiceSummary, summary);
+    }
 }
