@@ -48,4 +48,18 @@ public class InvoiceServiceTest {
         InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 40.0);
         Assertions.assertEquals(expectedInvoiceSummary, summary);
     }
+    @Test
+    public void givenRideTypeNormal_ShouldReturnFare(){
+        double distance = 0.1;
+        int time = 1;
+        double fare = invoiceGenerator.calculateRideFare("NORMAL", distance, time);
+        Assertions.assertEquals(5, fare);
+    }
+    @Test
+    public void givenRideTypePremium_ShouldReturnFare(){
+        double distance = 0.1;
+        int time = 1;
+        double fare = invoiceGenerator.calculateRideFare("PREMIUM", distance, time);
+        Assertions.assertEquals(20, fare);
+    }
 }
